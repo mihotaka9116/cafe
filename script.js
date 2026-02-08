@@ -57,3 +57,27 @@ window.addEventListener('scroll', () => {
   }
   lastScroll = currentScroll;
 });
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const cafeItems = document.querySelectorAll('.content');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // 1. ボタンの活性状態（色の変化）を切り替える
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        // 2. フィルタリング実行
+        const filterValue = button.getAttribute('data-filter');
+
+        cafeItems.forEach(item => {
+            if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                item.classList.remove('is-hidden');
+                // ふわっと再表示させるためにアニメーションクラスを一度外して付け直すのもアリです
+                item.classList.add('is-active'); 
+            } else {
+                item.classList.add('is-hidden');
+            }
+        });
+    });
+});
