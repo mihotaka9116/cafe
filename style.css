@@ -246,3 +246,65 @@ dd {
     width: 100%;
   }
 }
+
+/* カテゴリタグのスタイル */
+.area-tag {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 0.7rem;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.tag-sendai { background: #e0f0f1; color: #056E74; }
+.tag-yokohama { background: #f1e0e0; color: #a0522d; }
+
+.index-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 幅を調整 */
+  gap: 20px;
+}
+
+.index-list li a {
+  border: 1px solid #eee;
+  padding: 15px;
+  text-align: center;
+  border-radius: 4px;
+  background: #fdfdfd;
+}
+
+.index-list li a:hover {
+  background: #056E74;
+  color: #fff !important;
+  border-color: #056E74;
+  padding-left: 0; /* 元のpaddingを維持 */
+  transform: translateY(-3px);
+}
+
+.content .img {
+  overflow: hidden; /* 枠からはみ出さないように */
+  border-radius: 4px;
+}
+
+.content .img img {
+  transition: transform 0.6s ease;
+}
+
+.content:hover .img img {
+  transform: scale(1.05); /* ほんの少し拡大 */
+}
+
+@media (max-width: 768px) {
+  dt {
+    margin-bottom: 2px; /* ラベルと内容を近づける */
+  }
+  dd {
+    margin-bottom: 15px; /* 次の項目との間隔を空ける */
+    padding-left: 5px;
+  }
+}
+
+.description {
+  letter-spacing: 0.05em; /* わずかに広げる */
+  text-align: justify;   /* 文章の右端を揃える */
+}
