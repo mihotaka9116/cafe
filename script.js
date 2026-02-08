@@ -40,7 +40,7 @@ window.addEventListener('scroll', function() {
         toTopBtn.classList.remove('show');
     }
 
-    // ヘッダーの出し入れ（下スクロールで隠し、上スクロールで出す）
+    // ヘッダーの出し入れ
     if (currentScroll > lastScroll && currentScroll > 100) {
         header.style.transform = 'translateY(-100%)';
     } else {
@@ -49,4 +49,28 @@ window.addEventListener('scroll', function() {
     lastScroll = currentScroll;
 });
 
-const cafeItems = document.querySelectorAll('.content, .index-list li'); // INDEXのliも対象に含める
+// --- 4. エリアフィルタリング機能 ---
+const filterButtons = document.querySelectorAll('.filter-btn');
+const cafeItems = document.querySelectorAll('.content, .index-list li');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // ボタンの活性状態（色の変化）を切り替える
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const targetArea = button.getAttribute('data-filter');
+
+        cafeItems.forEach(item => {
+            // フィルタリング処理
+            if (targetArea === 'all' || item.classList.contains(targetArea)) {
+                item.classList.remove('is-hidden');
+                // ふわっと表示させるクラスを一度外して付け直す（アニメーションの再発火）
+                item.classList.remove('is-active');
+                setTimeout(() => item.classList.add('is-active'), 10);
+            } else {
+                item.classList.add('is-hidden');
+            }
+        });
+    });
+});
