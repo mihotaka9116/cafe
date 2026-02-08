@@ -48,3 +48,5 @@ window.addEventListener('scroll', function() {
     }
     lastScroll = currentScroll;
 });
+
+const cafeItems = document.querySelectorAll('.content, .index-list li'); // INDEXのliも対象に含める
