@@ -308,3 +308,35 @@ dd {
   letter-spacing: 0.05em; /* わずかに広げる */
   text-align: justify;   /* 文章の右端を揃える */
 }
+
+.content .img img {
+  width: 100%;
+  aspect-ratio: 3 / 2; /* 3:2の黄金比で固定 */
+  object-fit: cover;
+}
+
+.index-list li {
+  display: flex; /* 子要素（aタグ）の高さを揃える */
+}
+
+.index-list li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 60px; /* 最低限の高さを確保 */
+  /* 既存のプロパティ */
+}
+
+@media (min-width: 769px) {
+  .content .text {
+    padding: 0 20px; /* テキストの左右に少し余裕を持たせる */
+  }
+}
+
+.content .img img {
+  width: 100%;
+  aspect-ratio: 3 / 2; /* すべての画像を3:2の比率で表示 */
+  object-fit: cover;    /* 枠に合わせてトリミング */
+  /* 既存のtransitionなど */
+}
