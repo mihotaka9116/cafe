@@ -342,3 +342,30 @@ dd {
 }
 
 .tag-iwate { background: #e0f1e0; color: #2e7d32; } /* 岩手用のグリーンのタグ */
+
+.filter-controls {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background: #fff;
+    border: 1px solid #056E74;
+    color: #056E74;
+    padding: 8px 20px;
+    margin: 0 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #056E74;
+    color: #fff;
+}
+
+/* 非表示にする時のアニメーション用クラス */
+.is-hidden {
+    display: none !important;
+}
