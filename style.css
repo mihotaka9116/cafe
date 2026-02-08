@@ -340,3 +340,5 @@ dd {
   object-fit: cover;    /* 枠に合わせてトリミング */
   /* 既存のtransitionなど */
 }
+
+.tag-iwate { background: #e0f1e0; color: #2e7d32; } /* 岩手用のグリーンのタグ */
