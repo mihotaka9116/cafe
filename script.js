@@ -81,3 +81,26 @@ filterButtons.forEach(button => {
         });
     });
 });
+
+
+// エリアフィルタリング機能
+const filterButtons = document.querySelectorAll('.filter-btn');
+const cafeItems = document.querySelectorAll('.content');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // ボタンの見た目を切り替え
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const targetArea = button.getAttribute('data-filter');
+
+        cafeItems.forEach(item => {
+            if (targetArea === 'all' || item.classList.contains(targetArea)) {
+                item.classList.remove('is-hidden');
+            } else {
+                item.classList.add('is-hidden');
+            }
+        });
+    });
+});
