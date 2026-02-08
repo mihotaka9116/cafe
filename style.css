@@ -413,3 +413,19 @@ dd {
         transform: translateY(0);
     }
 }
+
+/* フィルタリングコントロールの余白調整 */
+.filter-controls {
+    text-align: center;
+    margin: 40px 0; /* INDEXタイトルとの間隔を最適化 */
+}
+
+/* ボタンのフォーカス時の青い枠線を消す（UX向上） */
+.filter-btn:focus {
+    outline: none;
+}
+
+/* アニメーションの微調整：INDEXのリストにも適用したい場合 */
+.index-list li:not(.is-hidden) {
+    animation: fadeInUp 0.4s ease forwards;
+}
