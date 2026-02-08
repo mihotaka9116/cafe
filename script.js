@@ -44,3 +44,16 @@ window.addEventListener('scroll', function() {
     toTopBtn.classList.remove('show');
   }
 });
+
+let lastScroll = 0;
+const header = document.getElementById('header');
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    header.style.transform = 'translateY(-100%)'; // 下スクロールで隠す
+  } else {
+    header.style.transform = 'translateY(0)';    // 上スクロールで出す
+  }
+  lastScroll = currentScroll;
+});
